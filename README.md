@@ -1,5 +1,5 @@
 # 150_Days_of_DSA_And_Leetcoding
-# Table of Contents
+# Table of Contents 
 
 - [Basics](#basics)
 - [Arrays and ArrayList](#arrays-and-arraylist)
