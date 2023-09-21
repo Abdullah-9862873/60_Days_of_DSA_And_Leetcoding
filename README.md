@@ -9,7 +9,7 @@
 - [Patterns](#patterns)
 - [Time and Space Complexity and Math](#time-and-space-complexity-and-math)
 - [Bitwise Operators](#bitwise-operators)
-- [Object-Oriented Programming (OOP)](#object-oriented-programming-oop)
+- [Object-Oriented Programming (OOP)](#object-oriented-programming-oop)  
 - [Stacks & Queue](#stacks--queue)
 - [Binary Tree & BST](#binary-tree--bst)
 - [Recursion](#recursion)
