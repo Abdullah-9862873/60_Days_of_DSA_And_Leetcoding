@@ -2,7 +2,7 @@
 # Table of Contents 
 
 - [Basics](#basics)
-- [Arrays and ArrayList](#arrays-and-arraylist)
+- [Arrays and ArrayList](#arrays-and-arraylist) 
 - [Searching](#searching)
 - [Sorting](#sorting)
 - [Strings and StringBuilder](#strings-and-stringbuilder)
