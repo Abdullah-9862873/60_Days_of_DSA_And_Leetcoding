@@ -3,7 +3,7 @@
 
 - [Basics](#basics)
 - [Arrays and ArrayList](#arrays-and-arraylist) 
-- [Searching](#searching)
+- [Searching](#searching) 
 - [Sorting](#sorting)
 - [Strings and StringBuilder](#strings-and-stringbuilder) 
 - [Patterns](#patterns)
