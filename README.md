@@ -4,7 +4,7 @@
 - [Basics](#basics)
 - [Arrays and ArrayList](#arrays-and-arraylist) 
 - [Searching](#searching) 
-- [Sorting](#sorting)
+- [Sorting](#sorting) 
 - [Strings and StringBuilder](#strings-and-stringbuilder) 
 - [Patterns](#patterns) 
 - [Time and Space Complexity and Math](#time-and-space-complexity-and-math)
