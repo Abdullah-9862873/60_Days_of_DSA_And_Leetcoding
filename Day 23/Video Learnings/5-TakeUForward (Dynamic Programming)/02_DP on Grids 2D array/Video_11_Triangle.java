@@ -34,99 +34,99 @@ https://www.codingninjas.com/studio/problems/triangle_1229398?source=youtube&cam
 
 //______________________________________________________________
 // Using Recursion
-// public class Video_11_Triangle {
-//     public static void main(String[] args) {
-//         int[][] triangle = {
-//             {1},
-//             {2,3},
-//             {3,6,9},
-//             {8,9,6,10}
-//         };
-//         int ans = getMinPath(triangle, 0,0);
-//         System.out.println(ans);
-//     }
-//     public static int getMinPath(int[][] triangle, int rowStart, int colStart){
-//         if(rowStart == triangle.length-1){
-//             return triangle[rowStart][colStart];
-//         }
+public class Video_11_Triangle {
+    public static void main(String[] args) {
+        int[][] triangle = {
+            {1},
+            {2,3},
+            {3,6,9},
+            {8,9,6,10}
+        };
+        int ans = getMinPath(triangle, 0,0);
+        System.out.println(ans);
+    }
+    public static int getMinPath(int[][] triangle, int rowStart, int colStart){
+        if(rowStart == triangle.length-1){
+            return triangle[rowStart][colStart];
+        }
 
-//         int ans1 = triangle[rowStart][colStart] + getMinPath(triangle, rowStart+1, colStart);
-//         int ans2 = triangle[rowStart][colStart] + getMinPath(triangle, rowStart+1, colStart+1);
-//         return Math.min(ans1, ans2);
-//     }
-//     public static void printAllPaths(int[][] triangle, int rowStart, int colstart, String asf){
-//         if(rowStart == triangle.length-1){
-//             System.out.println(asf);
-//             return;
-//         }
-//         printAllPaths(triangle, rowStart+1, colstart, asf.isEmpty() ? "Down" : asf + "-" + "Down");
-//         printAllPaths(triangle, rowStart+1, colstart+1, asf.isEmpty() ? "Diagonal" : asf + "-" + "Diagonal");
-//     }
-// }
+        int ans1 = triangle[rowStart][colStart] + getMinPath(triangle, rowStart+1, colStart);
+        int ans2 = triangle[rowStart][colStart] + getMinPath(triangle, rowStart+1, colStart+1);
+        return Math.min(ans1, ans2);
+    }
+    public static void printAllPaths(int[][] triangle, int rowStart, int colstart, String asf){
+        if(rowStart == triangle.length-1){
+            System.out.println(asf);
+            return;
+        }
+        printAllPaths(triangle, rowStart+1, colstart, asf.isEmpty() ? "Down" : asf + "-" + "Down");
+        printAllPaths(triangle, rowStart+1, colstart+1, asf.isEmpty() ? "Diagonal" : asf + "-" + "Diagonal");
+    }
+}
 
 //______________________________________________________________
 // Using Memoization
-// import java.util.*;
-// public class Video_11_Triangle {
-//     public static void main(String[] args) {
-//         int[][] triangle = {
-//             {1},
-//             {2,3},
-//             {3,6,9},
-//             {8,9,6,10}
-//         };
-//         int[][] dp = new int[triangle.length][triangle.length];
-//         for(int[] temp : dp){
-//             Arrays.fill(temp,-1);
-//         }
-//         int ans = getMinPath(triangle, 0,0, dp);
-//         System.out.println(ans);
-//     }
-//     public static int getMinPath(int[][] triangle, int rowStart, int colStart, int[][] dp){
-//         if(rowStart == triangle.length-1){
-//             return dp[rowStart][colStart] = triangle[rowStart][colStart];
-//         }
-//         if(dp[rowStart][colStart] != -1){
-//             return dp[rowStart][colStart];
-//         }
+import java.util.*;
+public class Video_11_Triangle {
+    public static void main(String[] args) {
+        int[][] triangle = {
+            {1},
+            {2,3},
+            {3,6,9},
+            {8,9,6,10}
+        };
+        int[][] dp = new int[triangle.length][triangle.length];
+        for(int[] temp : dp){
+            Arrays.fill(temp,-1);
+        }
+        int ans = getMinPath(triangle, 0,0, dp);
+        System.out.println(ans);
+    }
+    public static int getMinPath(int[][] triangle, int rowStart, int colStart, int[][] dp){
+        if(rowStart == triangle.length-1){
+            return dp[rowStart][colStart] = triangle[rowStart][colStart];
+        }
+        if(dp[rowStart][colStart] != -1){
+            return dp[rowStart][colStart];
+        }
 
-//         int ans1 = triangle[rowStart][colStart] + getMinPath(triangle, rowStart+1, colStart, dp);
-//         int ans2 = triangle[rowStart][colStart] + getMinPath(triangle, rowStart+1, colStart+1, dp);
-//         return dp[rowStart][colStart] = Math.min(ans1, ans2);
-//     }
-// }
+        int ans1 = triangle[rowStart][colStart] + getMinPath(triangle, rowStart+1, colStart, dp);
+        int ans2 = triangle[rowStart][colStart] + getMinPath(triangle, rowStart+1, colStart+1, dp);
+        return dp[rowStart][colStart] = Math.min(ans1, ans2);
+    }
+}
 //______________________________________________________________
 // Using Tabulation
-// public class Video_11_Triangle {
-//     public static void main(String[] args) {
-//         int[][] triangle = {
-//             {1},
-//             {2,3},
-//             {3,6,9},
-//             {8,9,6,10}
-//         };
-//         int ans = getMinPath(triangle, 0,0);
-//         System.out.println(ans);
-//     }
-//     public static int getMinPath(int[][] triangle, int rowStart, int colStart){
-//         int[][] dp = new int[triangle.length][triangle.length];
-//         int lengthOfLastRowOfTriangle = triangle[triangle.length-1].length;
-//         int lastRow = triangle.length-1;
-//         for(int i=0; i<lengthOfLastRowOfTriangle; i++){
-//             dp[lastRow][i] = triangle[lastRow][i];
-//         }
+public class Video_11_Triangle {
+    public static void main(String[] args) {
+        int[][] triangle = {
+            {1},
+            {2,3},
+            {3,6,9},
+            {8,9,6,10}
+        };
+        int ans = getMinPath(triangle, 0,0);
+        System.out.println(ans);
+    }
+    public static int getMinPath(int[][] triangle, int rowStart, int colStart){
+        int[][] dp = new int[triangle.length][triangle.length];
+        int lengthOfLastRowOfTriangle = triangle[triangle.length-1].length;
+        int lastRow = triangle.length-1;
+        for(int i=0; i<lengthOfLastRowOfTriangle; i++){
+            dp[lastRow][i] = triangle[lastRow][i];
+        }
 
-//         int secondLastRow = triangle.length-2;
-//         for(int i=secondLastRow; i>=0; i--){
-//             for(int j=triangle[i].length-1; j>=0; j--){
-//                 int ans1 = dp[i+1][j];
-//                 int ans2 = dp[i+1][j+1];
-//                 dp[i][j] = triangle[i][j] + Math.min(ans1,ans2);
-//             }
-//         }
-//         return dp[0][0];
-//     }
-// }
+        int secondLastRow = triangle.length-2;
+        for(int i=secondLastRow; i>=0; i--){
+            for(int j=triangle[i].length-1; j>=0; j--){
+                int ans1 = dp[i+1][j];
+                int ans2 = dp[i+1][j+1];
+                dp[i][j] = triangle[i][j] + Math.min(ans1,ans2);
+            }
+        }
+        return dp[0][0];
+    }
+}
 
 //______________________________________________________________
 // Space Optimization
