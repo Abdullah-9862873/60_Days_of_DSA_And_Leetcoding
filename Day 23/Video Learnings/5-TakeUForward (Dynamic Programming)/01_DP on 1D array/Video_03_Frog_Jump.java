@@ -26,71 +26,71 @@ https://www.codingninjas.com/studio/problems/frog-jump_3621012?source=youtube&ca
 //_____________________________________________________________________________
 
 //__________________________Simple Recursion____________________________________
-// public class Video_03_Frog_Jump {
-//     public static void main(String[] args) {
-// int[] arr = {30,10,60,10,60,50};
-// int min = Integer.MAX_VALUE;
-// int initialStep = 0;
-// int finalStep = arr.length-1;
-// int answerSoFar = 0;
+public class Video_03_Frog_Jump {
+    public static void main(String[] args) {
+int[] arr = {30,10,60,10,60,50};
+int min = Integer.MAX_VALUE;
+int initialStep = 0;
+int finalStep = arr.length-1;
+int answerSoFar = 0;
 
-//         int ans = getAns(initialStep,finalStep,min,answerSoFar,arr);
-//         System.out.println(ans);
-//     }
-//     public static int getAns(int initialStep, int finalStep, int min,int answerSoFar, int[] arr){
-//         if(initialStep >= finalStep){
-//             if(initialStep == finalStep){
-//                 min = Math.min(min, answerSoFar);
-//             }
-//             return min;
-//         }
-//         int min1= getAns(initialStep+1, finalStep, min, initialStep+1 <= finalStep ? answerSoFar + Math.abs(arr[initialStep+1]-arr[initialStep]) : answerSoFar, arr);
-//         int min2 = getAns(initialStep+2, finalStep, min, initialStep+2 <= finalStep ? answerSoFar + Math.abs(arr[initialStep+2]-arr[initialStep]) : answerSoFar, arr);
+        int ans = getAns(initialStep,finalStep,min,answerSoFar,arr);
+        System.out.println(ans);
+    }
+    public static int getAns(int initialStep, int finalStep, int min,int answerSoFar, int[] arr){
+        if(initialStep >= finalStep){
+            if(initialStep == finalStep){
+                min = Math.min(min, answerSoFar);
+            }
+            return min;
+        }
+        int min1= getAns(initialStep+1, finalStep, min, initialStep+1 <= finalStep ? answerSoFar + Math.abs(arr[initialStep+1]-arr[initialStep]) : answerSoFar, arr);
+        int min2 = getAns(initialStep+2, finalStep, min, initialStep+2 <= finalStep ? answerSoFar + Math.abs(arr[initialStep+2]-arr[initialStep]) : answerSoFar, arr);
 
-//         return Math.min(min1,min2);
-//     }
-// }
+        return Math.min(min1,min2);
+    }
+}
 
 //__________________________Using Memoization____________________________________
 // import java.util.*;
 
-// public class Video_03_Frog_Jump {
-//     public static void main(String[] args) {
-//         int[] arr = { 30, 10, 60, 10, 60, 50 };
-//         int initialStep = 0;
-//         int finalStep = arr.length - 1;
-//         int[] memo = new int[arr.length];
-//         Arrays.fill(memo, -1);
+public class Video_03_Frog_Jump {
+    public static void main(String[] args) {
+        int[] arr = { 30, 10, 60, 10, 60, 50 };
+        int initialStep = 0;
+        int finalStep = arr.length - 1;
+        int[] memo = new int[arr.length];
+        Arrays.fill(memo, -1);
 
-//         int ans = getAns(initialStep, finalStep, arr, memo);
-//         System.out.println(ans);
-//     }
+        int ans = getAns(initialStep, finalStep, arr, memo);
+        System.out.println(ans);
+    }
 
-//     public static int getAns(int initialStep, int finalStep, int[] arr, int[] memo) {
-//         if (initialStep >= finalStep) {
-//             if (initialStep == finalStep) {
-//                 return 0;
-//             }
-//             return Integer.MAX_VALUE;
-//         }
+    public static int getAns(int initialStep, int finalStep, int[] arr, int[] memo) {
+        if (initialStep >= finalStep) {
+            if (initialStep == finalStep) {
+                return 0;
+            }
+            return Integer.MAX_VALUE;
+        }
 
-//         if (memo[initialStep] != -1) {
-//             return memo[initialStep];
-//         }
+        if (memo[initialStep] != -1) {
+            return memo[initialStep];
+        }
 
-//         int min1 = Integer.MAX_VALUE;
-//         if (initialStep + 1 <= finalStep) {
-//             min1 = getAns(initialStep + 1, finalStep, arr, memo) + Math.abs(arr[initialStep + 1] - arr[initialStep]);
-//         }
+        int min1 = Integer.MAX_VALUE;
+        if (initialStep + 1 <= finalStep) {
+            min1 = getAns(initialStep + 1, finalStep, arr, memo) + Math.abs(arr[initialStep + 1] - arr[initialStep]);
+        }
 
-//         int min2 = Integer.MAX_VALUE;
-//         if (initialStep + 2 <= finalStep) {
-//             min2 = getAns(initialStep + 2, finalStep, arr, memo) + Math.abs(arr[initialStep + 2] - arr[initialStep]);
-//         }
+        int min2 = Integer.MAX_VALUE;
+        if (initialStep + 2 <= finalStep) {
+            min2 = getAns(initialStep + 2, finalStep, arr, memo) + Math.abs(arr[initialStep + 2] - arr[initialStep]);
+        }
 
-//         return memo[initialStep] = Math.min(min1, min2);
-//     }
-// }
+        return memo[initialStep] = Math.min(min1, min2);
+    }
+}
 
 //__________________________Using Tabulation___________________________________
 import java.util.*;
