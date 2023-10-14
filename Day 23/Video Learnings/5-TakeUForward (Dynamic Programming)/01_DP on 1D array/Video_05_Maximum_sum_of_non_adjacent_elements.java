@@ -87,97 +87,97 @@ https://www.codingninjas.com/studio/problems/maximum-sum-of-non-adjacent-element
 // }
 
 //____________________________________________________________________________
-// Rectursion Method 2
+// Recursion Method 2
 
-// public class Video_05_Maximum_sum_of_non_adjacent_elements{
-//     public static void main(String[] args) {
-//         int[] arr = {2,1,4,9};
-//         int ans = getMaxSumOfNonAdjacentSubSequences(arr, arr.length-1);
-//         System.out.println(ans);
-//     }
-//     public static int getMaxSumOfNonAdjacentSubSequences(int[] arr, int index){
-//         if(index == 0){
-//             return arr[index];
-//         }
-//         if(index < 0){
-//             return 0;
-//         }
+public class Video_05_Maximum_sum_of_non_adjacent_elements{
+    public static void main(String[] args) {
+        int[] arr = {2,1,4,9};
+        int ans = getMaxSumOfNonAdjacentSubSequences(arr, arr.length-1);
+        System.out.println(ans);
+    }
+    public static int getMaxSumOfNonAdjacentSubSequences(int[] arr, int index){
+        if(index == 0){
+            return arr[index];
+        }
+        if(index < 0){
+            return 0;
+        }
 
-//         // Pick
-//         int ans1 = arr[index] + getMaxSumOfNonAdjacentSubSequences(arr, index-2);
+        // Pick
+        int ans1 = arr[index] + getMaxSumOfNonAdjacentSubSequences(arr, index-2);
 
-//         // Not Pick
-//         int ans2 = 0 + getMaxSumOfNonAdjacentSubSequences(arr, index-1);
+        // Not Pick
+        int ans2 = 0 + getMaxSumOfNonAdjacentSubSequences(arr, index-1);
 
-//         return Math.max(ans1, ans2);
-//     }
-// }
+        return Math.max(ans1, ans2);
+    }
+}
 
 //___________________________________________________________________
 // Using Memoization
-// import java.util.*;
-// public class Video_05_Maximum_sum_of_non_adjacent_elements{
-//     public static void main(String[] args) {
-//         int[] arr = {2,1,4,9};
-//         int[] dp = new int[arr.length];
-//         Arrays.fill(dp,-1);
-//         int ans = getMaxSumOfNonAdjacentSubSequences(arr, arr.length-1, dp);
-//         System.out.println(ans);
-//     }
-//     public static int getMaxSumOfNonAdjacentSubSequences(int[] arr, int index, int[] dp){
-//         if(index == 0){
-//             return arr[index];
-//         }
-//         if(index < 0){
-//             return 0;
-//         }
-        // if(dp[index] != -1){
-        //     return dp[index];
-        // }
+import java.util.*;
+public class Video_05_Maximum_sum_of_non_adjacent_elements{
+    public static void main(String[] args) {
+        int[] arr = {2,1,4,9};
+        int[] dp = new int[arr.length];
+        Arrays.fill(dp,-1);
+        int ans = getMaxSumOfNonAdjacentSubSequences(arr, arr.length-1, dp);
+        System.out.println(ans);
+    }
+    public static int getMaxSumOfNonAdjacentSubSequences(int[] arr, int index, int[] dp){
+        if(index == 0){
+            return arr[index];
+        }
+        if(index < 0){
+            return 0;
+        }
+        if(dp[index] != -1){
+            return dp[index];
+        }
 
-//         // Pick
-//         int ans1 = arr[index] + getMaxSumOfNonAdjacentSubSequences(arr, index-2, dp);
+        // Pick
+        int ans1 = arr[index] + getMaxSumOfNonAdjacentSubSequences(arr, index-2, dp);
 
-//         // Not Pick
-//         int ans2 = 0 + getMaxSumOfNonAdjacentSubSequences(arr, index-1, dp);
+        // Not Pick
+        int ans2 = 0 + getMaxSumOfNonAdjacentSubSequences(arr, index-1, dp);
 
-        // return dp[index] = Math.max(ans1, ans2);
-//     }
-// }
+        return dp[index] = Math.max(ans1, ans2);
+    }
+}
 
 // Time Complexity ----> O(n)
 // Space Complexity ---> O(n) + O(n)
 
 //________________________________________________________________________________
 // Using Tabulation
-// public class Video_05_Maximum_sum_of_non_adjacent_elements{
-//     public static void main(String[] args) {
-//         int[] arr = {2,1,4,9};
-//         int ans = getMaxSumOfNonAdjacentSubSequences(arr);
-//         System.out.println(ans);
-//     }
-//     public static int getMaxSumOfNonAdjacentSubSequences(int[] arr){
-//         int n = arr.length;
-//         if(n == 0){
-//             return 0;
-//         }
+public class Video_05_Maximum_sum_of_non_adjacent_elements{
+    public static void main(String[] args) {
+        int[] arr = {2,1,4,9};
+        int ans = getMaxSumOfNonAdjacentSubSequences(arr);
+        System.out.println(ans);
+    }
+    public static int getMaxSumOfNonAdjacentSubSequences(int[] arr){
+        int n = arr.length;
+        if(n == 0){
+            return 0;
+        }
 
-//         int[] dp = new int[n];
-//         dp[0] = arr[0];
-//         for(int i=1; i<n; i++){
-//             // pick
-//             int pick = arr[i];
-//             if(i > 1){
-//                 pick += dp[i-2];
-//             }
-//             // not pick
-//             int notPick = 0 + dp[i-1];
-//             dp[i] = Math.max(pick,notPick);
-//         }   
+        int[] dp = new int[n];
+        dp[0] = arr[0];
+        for(int i=1; i<n; i++){
+            // pick
+            int pick = arr[i];
+            if(i > 1){
+                pick += dp[i-2];
+            }
+            // not pick
+            int notPick = 0 + dp[i-1];
+            dp[i] = Math.max(pick,notPick);
+        }   
 
-//         return dp[n-1];
-//     }
-// }
+        return dp[n-1];
+    }
+}
 
 //________________________________________________________________________________
 // Space Optimization
