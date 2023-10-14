@@ -1,25 +1,25 @@
 // --------------------Memoization--------------------
-// import java.util.*;
-// public class Video_01_Introduction{
-//     public static void main(String[] args) {
-//         int n = 5;
-//         // Find the nth fibonacci number
-//         int[] dp = new int[n+1];
-//         Arrays.fill(dp,-1);
-//         int ans = fib(n, dp);
-//         System.out.println(ans);
-//     }
-//     public static int fib(int n, int[] dp){
-//         if(n <= 1){
-//             return n;
-//         }
+import java.util.*;
+public class Video_01_Introduction{
+    public static void main(String[] args) {
+        int n = 5;
+        // Find the nth fibonacci number
+        int[] dp = new int[n+1];
+        Arrays.fill(dp,-1);
+        int ans = fib(n, dp);
+        System.out.println(ans);
+    }
+    public static int fib(int n, int[] dp){
+        if(n <= 1){
+            return n;
+        }
 
-//         if(dp[n] != -1){
-//             return dp[n];
-//         }
-//         return dp[n] = fib(n-1, dp) + fib(n-2, dp);
-//     }
-// }
+        if(dp[n] != -1){
+            return dp[n];
+        }
+        return dp[n] = fib(n-1, dp) + fib(n-2, dp);
+    }
+}
 /*
 Notes----> The dynamic programming is divided into memoization and tabulation... 
 Memoization ----> Top Down
