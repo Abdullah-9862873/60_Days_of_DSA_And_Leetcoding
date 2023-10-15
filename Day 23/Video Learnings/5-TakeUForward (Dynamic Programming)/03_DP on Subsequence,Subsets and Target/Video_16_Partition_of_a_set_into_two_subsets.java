@@ -1,7 +1,7 @@
 /*
 Problem Statement
 You are given an array 'arr' containing 'n' non- negative integers. Your task is to partition this array into two subsets such that the absolute difference between subset sums is minimum. You just need to find the minimum absolute difference considering any valid division of the array elements.
-
+ 
 Example:
 Input: 'n' = 5, 'arr' = [3, 1, 5, 2, 8].
 Ouput: 1
