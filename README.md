@@ -6,7 +6,7 @@
 - [Searching](#searching) 
 - [Sorting](#sorting) 
 - [Strings and StringBuilder](#strings-and-stringbuilder) 
-- [Patterns](#patterns) 
+- [Patterns](#patterns)  
 - [Time and Space Complexity and Math](#time-and-space-complexity-and-math)
 - [Bitwise Operators](#bitwise-operators)
 - [Object-Oriented Programming (OOP)](#object-oriented-programming-oop)  
