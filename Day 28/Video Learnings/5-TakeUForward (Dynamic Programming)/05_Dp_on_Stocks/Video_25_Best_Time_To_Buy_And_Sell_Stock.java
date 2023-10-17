@@ -1,6 +1,6 @@
 /*
 Problem Statement:
-You have to buy on the minimum price and sell on the maximum... You cannot do something like buy on day 4 but sell on day 1... It has to be in order...
+You have to buy on the minimum price and sell on the maximum... You cannot do something like buy on day 4 but sell on day 1... It has to be in order... You can only buy once and sell once
 */
 public class Video_25_Best_Time_To_Buy_And_Sell_Stock{
     public static void main(String[] args) {
