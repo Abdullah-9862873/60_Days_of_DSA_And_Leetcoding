@@ -52,19 +52,19 @@
 - **Description:** Working with bitwise operators.
 - **Instructor:** Kunal Kushwaha.
 
----
+## Binary Tree & BST
+- **Description:** Concepts related to binary trees and binary search trees.
+- **Instructor:** Kunal Kushwaha.
 
 ## Object-Oriented Programming (OOP)
 - **Description:** Object-oriented programming concepts.
-- **Instructor:** Kunal Kushwaha 
+- **Instructor:** Kunal Kushwaha
+
+---
 
 ## Stacks & Queue
 - **Description:** Data structures - Stacks and Queues.
 - **Instructor:** Pepcoding 
-
-## Binary Tree & BST
-- **Description:** Concepts related to binary trees and binary search trees.
-- **Instructor:** Kunal Kushwaha.
 
 ## Recursion
 - **Description:** Understanding and using recursion in programming.
