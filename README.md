@@ -26,24 +26,31 @@
 
 ## Arrays and ArrayList
 - **Description:** Working with arrays and ArrayList data structures.
+- **Instructor:** Kunal Kushwaha.
 
 ## Searching
 - **Description:** Techniques for searching elements in data structures.
+- **Instructor:** Kunal Kushwaha.
 
 ## Sorting
 - **Description:** Various sorting algorithms and their implementations.
+- **Instructor:** Kunal Kushwaha.
 
 ## Strings and StringBuilder
 - **Description:** Manipulating strings and using the StringBuilder class.
+- **Instructor:** Kunal Kushwaha.
 
 ## Patterns
 - **Description:** Creating different patterns and shapes.
+- **Instructor:** Kunal Kushwaha.
 
 ## Time and Space Complexity and Math
 - **Description:** Understanding time and space complexity analysis and mathematical concepts.
+- **Instructor:** Kunal Kushwaha.
 
 ## Bitwise Operators
 - **Description:** Working with bitwise operators.
+- **Instructor:** Kunal Kushwaha.
 
 ---
 
@@ -57,7 +64,7 @@
 
 ## Binary Tree & BST
 - **Description:** Concepts related to binary trees and binary search trees.
-- **Instructor:** Takeuforward
+- **Instructor:** Kunal Kushwaha.
 
 ## Recursion
 - **Description:** Understanding and using recursion in programming.
@@ -73,7 +80,7 @@
 
 ## Heaps
 - **Description:** Heap data structure and related algorithms.
-- **Instructor:** Anuj Bhaiya 
+- **Instructor:** Anuj Bhaiya & Kunal Kushwaha
 
 ## Greedy Algorithm
 - **Description:** Greedy algorithm techniques and resources.
