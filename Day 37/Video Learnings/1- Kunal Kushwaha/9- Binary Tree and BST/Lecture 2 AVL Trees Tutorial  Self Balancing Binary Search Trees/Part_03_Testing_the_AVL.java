@@ -26,22 +26,32 @@ public class Part_03_Testing_the_AVL {
     }
     
     public static Node rotate(Node node) {
-
         if (height(node.left) - height(node.right) > 1) {
+            // left heavy
             if (height(node.left.left) - height(node.left.right) > 0) {
+                // left left case
                 return rightRotate(node);
-            } else if (height(node.left.left) - height(node.left.right) < 0) {
+            }
+            if (height(node.left.left) - height(node.left.right) < 0) {
+                // left right case
                 node.left = leftRotate(node.left);
                 return rightRotate(node);
             }
-        } else if (height(node.left) - height(node.right) < -1) {
-            if (height(node.right.left) - height(node.right.right) > 0) {
-                node.right = rightRotate(node.right);
+        }
+
+        if (height(node.left) - height(node.right) < -1) {
+            // right heavy
+            if (height(node.right.left) - height(node.right.right) < 0) {
+                // right right case
                 return leftRotate(node);
-            } else if (height(node.right.left) - height(node.right.right) < 0) {
+            }
+            if (height(node.right.left) - height(node.right.right) > 0) {
+                // left right case
+                node.right = rightRotate(node.right);
                 return leftRotate(node);
             }
         }
+
         return node;
     }
 
