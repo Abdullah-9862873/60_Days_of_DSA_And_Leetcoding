@@ -14,31 +14,142 @@ import java.util.*;
 public class Part_16_infix_Evaluation {
     public static void main(String[] args) {
         String str = "2+6*4/8-3";
-        int ans = evaluateInfix(str);
+        // String str = "2+(5-3*6/2)";
+        float ans = evaluateInfix(str);
         System.out.println(ans);
     }
-    public static int evaluateInfix(String str){
-        Stack<Character> operand = new Stack<>();
+
+    public static float evaluateInfix(String str) {
+        Stack<Float> operand = new Stack<>();
         Stack<Character> operator = new Stack<>();
 
-        int i=0;
-        while(i < str.length()){
-            if(str.charAt(i) == '+' || str.charAt(i) == '-' || str.charAt(i) == '/' || str.charAt(i) == '*' || str.charAt(i) == '(' || str.charAt(i) == ')'){
-                if(str.charAt(i) == '+'){
-                    if(operator.peek() == '-'){
-                        int first = operand.peek();
-                        operand.pop();
-                        int second = operand.peek();
-                        operand.pop();
-                        int evaluation = first - second;
-                        operand.push(char(evaluation));
+        int i = 0;
+        while (i < str.length()) {
+            if (str.charAt(i) == '+' || str.charAt(i) == '-' || str.charAt(i) == '*' || str.charAt(i) == '/'
+                    || str.charAt(i) == '(' || str.charAt(i) == ')') {
+                if (operator.size() == 0 || str.charAt(i) == '(') {
+                    operator.push(str.charAt(i));
+                    i++;
+                } else {
+                    if (str.charAt(i) == '+') {
+                        if (operator.peek() == '-' || operator.peek() == '*' || operator.peek() == '/') {
+                            if (operand.size() > 1) {
+                                float value2 = operand.pop();
+                                float value1 = operand.pop();
+                                float evaluation = 0;
+                                if (operator.peek() == '-') {
+                                    evaluation = value1 - value2;
+                                } else if (operator.peek() == '*') {
+                                    evaluation = value1 * value2;
+                                } else if (operator.peek() == '/') {
+                                    evaluation = value1 / value2;
+                                }
+                                operand.push(evaluation);
+                                operator.pop();
+                                continue;
+                            }
+                        } else {
+                            operator.push(str.charAt(i));
+                            i++;
+                        }
+                    } else if (str.charAt(i) == '-') {
+                        if (operator.peek() == '+' || operator.peek() == '*' || operator.peek() == '/') {
+                            if (operand.size() > 1) {
+                                float value2 = operand.pop();
+                                float value1 = operand.pop();
+                                float evaluation = 0;
+                                if (operator.peek() == '+') {
+                                    evaluation = value1 + value2;
+                                } else if (operator.peek() == '*') {
+                                    evaluation = value1 * value2;
+                                } else if (operator.peek() == '/') {
+                                    evaluation = value1 / value2;
+                                }
+                                operand.push(evaluation);
+                                operator.pop();
+                                continue;
+                            }
+                        } else {
+                            operator.push(str.charAt(i));
+                            i++;
+                        }
+                    } else if (str.charAt(i) == '*') {
+                        if (operator.peek() == '/') {
+                            if (operand.size() > 1) {
+                                float value2 = operand.pop();
+                                float value1 = operand.pop();
+                                float evaluation = value1 / value2;
+                                operand.push(evaluation);
+                                operator.pop();
+                                continue;
+                            }
+                        } else {
+                            operator.push(str.charAt(i));
+                            i++;
+                        }
+                    } else if (str.charAt(i) == '/') {
+                        if (operator.peek() == '*') {
+                            if (operand.size() > 1) {
+                                float value2 = operand.pop();
+                                float value1 = operand.pop();
+                                float evaluation = value1 * value2;
+                                operand.push(evaluation);
+                                operator.pop();
+                                continue;
+                            }
+                        } else {
+                            operator.push(str.charAt(i));
+                            i++;
+                        }
+                    } else if (str.charAt(i) == ')') {
+                        while (operator.peek() != '(') {
+                            if (operand.size() > 1) {
+                                float value2 = operand.pop();
+                                float value1 = operand.pop();
+                                float evaluation = 0;
+                                if (operator.peek() == '+') {
+                                    evaluation = value1 + value2;
+                                } else if (operator.peek() == '-') {
+                                    evaluation = value1 - value2;
+                                } else if (operator.peek() == '*') {
+                                    evaluation = value1 * value2;
+                                } else if (operator.peek() == '/') {
+                                    evaluation = value1 / value2;
+                                }
+                                operand.push(evaluation);
+                            }
+                            operator.pop();
+                        }
+                        operator.pop();
+                        i++;
                     }
                 }
-            }else{
-                operand.push(str.charAt(i));
+            } else {
+                String charAsString = String.valueOf(str.charAt(i));
+                float myFloat = Float.parseFloat(charAsString);
+                operand.push(myFloat);
+                i++;
             }
         }
 
-        return 1;
+        while (operator.size() > 0) {
+            if (operand.size() > 1) {
+                float value2 = operand.pop();
+                float value1 = operand.pop();
+                float evaluation = 0;
+                if (operator.peek() == '+') {
+                    evaluation = value1 + value2;
+                } else if (operator.peek() == '-') {
+                    evaluation = value1 - value2;
+                } else if (operator.peek() == '*') {
+                    evaluation = value1 * value2;
+                } else if (operator.peek() == '/') {
+                    evaluation = value1 / value2;
+                }
+                operand.push(evaluation);
+                operator.pop();
+            }
+        }
+        return operand.peek();
     }
 }
