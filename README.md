@@ -11,6 +11,7 @@
 - [Bitwise Operators](#bitwise-operators)
 - [Object-Oriented Programming (OOP)](#object-oriented-programming-oop)  
 - [Stacks & Queue](#stacks--queue)
+- [Linked List](#stacks--queue)
 - [Binary Tree & BST](#binary-tree--bst)
 - [Recursion](#recursion)
 - [Dynamic Programming (DP)](#dynamic-programming-dp)
@@ -54,6 +55,9 @@
 
 ## Binary Tree & BST
 - **Description:** Concepts related to binary trees and binary search trees.
+- **Instructor:** Kunal Kushwaha.
+  
+## Linked List
 - **Instructor:** Kunal Kushwaha.
 
 ## Object-Oriented Programming (OOP)
