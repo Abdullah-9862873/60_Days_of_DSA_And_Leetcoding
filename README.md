@@ -19,6 +19,7 @@
 - [Heaps](#heaps)
 - [Greedy Algorithm](#greedy-algorithm)
 - [Algorithms Questions](#algorithms-questions)
+- [DBMS](#dbms)
 
 ---
 
@@ -104,4 +105,10 @@
   - Takeuforward 
   - CodenCode 
   - Fraz 
-  - Pepcoding 
+  - Pepcoding
+
+## DBMS
+- **Description:** Interview Perspective
+- **Instructors:** 
+  - Love Babbar
+
