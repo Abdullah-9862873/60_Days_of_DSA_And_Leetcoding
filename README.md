@@ -20,6 +20,7 @@
 - [Greedy Algorithm](#greedy-algorithm)
 - [Algorithms Questions](#algorithms-questions)
 - [DBMS](#dbms)
+- [MySql](#MySql)
 
 ---
 
@@ -111,4 +112,9 @@
 - **Description:** Interview Perspective
 - **Instructors:** 
   - Love Babbar
+ 
+## MySql
+- **Description:** Detailed Information
+- **Instructors:** 
+  - Apna College
 
