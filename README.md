@@ -1,4 +1,4 @@
-# 150_Days_of_DSA_And_Leetcoding 
+# 60_Days_of_DSA_And_Leetcoding 
 # Table of Contents 
 
 - [Basics](#basics)
