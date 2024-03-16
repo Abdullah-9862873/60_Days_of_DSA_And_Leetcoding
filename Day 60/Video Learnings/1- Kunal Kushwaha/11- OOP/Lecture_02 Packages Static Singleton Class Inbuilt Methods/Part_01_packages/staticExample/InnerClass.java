@@ -67,6 +67,6 @@ Then it will print "Ahmed"... This is because the "name" variable is now indepen
 
 
 _________Static classes resolution____________
-----> Since the objects are created at runtime and the static classes are independent of the creation of objects of upperClass, hence the static classes are resolved during compile time...
+----> Since the objects are created at runtime and the static classes are independent of the creation of objects of upperClass, hence the static classes are resolved during compile time... Early binding is being done here
 
 */
