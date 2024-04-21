@@ -21,6 +21,7 @@
 - [Algorithms Questions](#algorithms-questions)
 - [DBMS](#dbms)
 - [MySql](#MySql)
+- [Operating System](#Operating-System)
 
 ---
 
@@ -117,4 +118,8 @@
 - **Description:** Detailed Information
 - **Instructors:** 
   - Apna College
+    
+## Operating System
+- **Instructors:** 
+  - Love Babbar
 
