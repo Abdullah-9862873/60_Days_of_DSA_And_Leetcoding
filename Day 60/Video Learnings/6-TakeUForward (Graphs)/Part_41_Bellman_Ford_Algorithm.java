@@ -153,11 +153,10 @@ public class Part_41_Bellman_Ford_Algorithm {
             }
         }
 
-        // Detecting a negative cycle
+        // Nth iteration to detect negative cycle
         boolean negativeCyclePresent = false;
-        for (int count = 0; count <= n - 1; count++) {
             for (int i = 0; i < adj.size(); i++) {
-                ArrayList<ArrayList<Integer>> list = adj.get(i);
+                ArrayList<ArrayList<Integer>> list = adj. get(i);
                 if (list.size() > 0) {
                     for (int j = 0; j < list.size(); j++) {
                         int u = i;
@@ -170,7 +169,6 @@ public class Part_41_Bellman_Ford_Algorithm {
                     }
                 }
             }
-        }
         if(negativeCyclePresent){
             System.out.println("Negative Cycle is present");
         }
