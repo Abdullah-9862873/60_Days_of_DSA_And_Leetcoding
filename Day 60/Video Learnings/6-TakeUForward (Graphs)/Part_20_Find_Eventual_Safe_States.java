@@ -112,19 +112,28 @@ public class Part_20_Find_Eventual_Safe_States{
         }
         return adj;
     }
-    public static void displayDirectedGraphOfAdjacencyList(ArrayList<ArrayList<Integer>> adj){
+        public static void displayDirectedGraphOfAdjacencyList(ArrayList<ArrayList<Integer>> adj) {
         ArrayList<ArrayList<Integer>> copied = new ArrayList<>();
 
-        for(ArrayList<Integer> temp: adj){
+        for (ArrayList<Integer> temp : adj) {
             ArrayList<Integer> copyList = new ArrayList<>(temp);
             copied.add(copyList);
         }
 
-        for (int i = 1; i < copied.size(); i++) {
-            ArrayList<Integer> arr = copied.get(i);
-            for(int j=0; j<arr.size(); j++){
-                System.out.println(i + " ---> " + copied.get(i).get(j));
+        // I have already copied
+        for (int i = 1; i < adj.size(); i++) {
+            System.out.print(i + " ---> {");
+            ArrayList<Integer> list = adj.get(i);
+            for (int j = 0; j < list.size(); j++) {
+                if (j == list.size() - 1) {
+                    System.out.print(list.get(j));
+                } else {
+                    System.out.print(list.get(j) + " ,");
+                }
             }
+
+            System.out.println("}");
         }
     }
+
 }
